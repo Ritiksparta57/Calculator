@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="calculator">
+       <input id="display" readonly>
+        <div class="values">
+            <button onclick="ans()">=</button>
+            <button onclick="cler()" >C</button>
+            <button  onclick="fuv('00')" >00</button>
+            <button onclick="fuv('*')" >*</button>
+            <button onclick="fuv('/')">/</button>
+            <button onclick="fuv('+')" >+</button>
+            <button onclick="fuv('7')" >7</button>
+            <button onclick="fuv('8')">8</button>
+            <button onclick="fuv('9')" >9</button>
+            <button onclick="fuv('-')" >-</button>
+            <button onclick="swrt('x^0.5')">&Sqrt;x</button>
+            <button onclick="cbrt('x^.33')" >&#8731;x</button>
+            <button onclick="fuv('4')" >4</button>
+            <button onclick="fuv('5')">5</button>
+            <button onclick="fuv('6')">6</button>
+            <button style="font-size: 2rem;" onclick="log10('log')" >log<sub>10</sub>x</button>
+            <button style="font-size: 2rem;" onclick="loge('log')" >log<sub>e</sub>x</button>
+            <button style="font-size: 2rem;" onclick="log2('log')" >log<sub>2</sub>x</button>
+            <button onclick="fuv('1')">1</button>
+            <button onclick="fuv('2')" >2</button>
+            <button onclick="fuv('3')" >3</button>
+            <button  onclick="e('exp')" >e<sup>x</sup></button>
+            <button onclick="fuv('&#177')" >&#177;</button>
+            <button  onclick="x('exp')" >x<sup>2</sup></button>
+            <button onclick="fuv('0')">0</button>
+            <button onclick="fuv('.')" >.</button>
+            <button  onclick="x1('exp')" >x<sup>3</sup></button>
+            <button  onclick="x2('exp')" >10<sup>x</sup></button>
+            
+        </div>
+    </div>
+    <script>
+        const d=document.querySelector('#display');
+        const v=document.querySelector('.values');
+       function fuv(input){
+          display.value += input;
+        }
+        function cler(){
+            display.value =" ";
+        }
+        function swrt(){
+            display.value=Math.sqrt(display.value);
+        }
+        function cbrt(){
+            display.value=Math.cbrt(display.value);
+        }
+        function log10(){
+            display.value=Math.log10(display.value);
+        }   
+             function loge(){
+            display.value=Math.log(display.value);
+        }
+                function log2(){
+            display.value=Math.log2(display.value);
+        }   
+             function e(){
+            display.value=Math.exp(display.value);
+        }  
+              function x(){
+            display.value=Math.pow(display.value,2);
+        } 
+               function x1(){
+            display.value=Math.pow(display.value,3);
+        }   
+             function x2(){
+            display.value=Math.pow(10,display.value);
+        }
+        function ans(){
+            try{
+            display.value=eval(display.value);
+            }
+            catch(error){
+                display.value='error';
+            }
+        }
+    </script>
+</body>
+</html>
